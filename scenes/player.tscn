@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca23sogv3emw8"]
+[gd_scene load_steps=4 format=3 uid="uid://ca23sogv3emw8"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_q7117"]
 [ext_resource type="Texture2D" uid="uid://b3pols56ga5b5" path="res://icon.svg" id="1_w22sb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnp31"]
@@ -7,6 +8,7 @@ radius = 34.0
 height = 126.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_q7117")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
