@@ -3,8 +3,8 @@ extends CharacterBody2D
 # set player speed
 
 @export var speed = 300.0
-@export var jump_velocity = 500.0
-@export var gravity = 400
+@export var jump_velocity = 600.0
+@export var gravity = 700
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

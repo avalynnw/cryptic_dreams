@@ -11,8 +11,7 @@ size = Vector2(382, 20)
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_npnul")]
-position = Vector2(554, 324)
-gravity = 400
+position = Vector2(434, 469)
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(369, 509)
@@ -37,5 +36,31 @@ scale = Vector2(0.764, 1)
 mesh = SubResource("QuadMesh_xsjx4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_moybb")
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2(1251, 401)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="platform3"]
+modulate = Color(0.133333, 0.176471, 0.235294, 1)
+position = Vector2(59, 0)
+scale = Vector2(0.764, 1)
+mesh = SubResource("QuadMesh_xsjx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_moybb")
+
+[node name="platform4" type="StaticBody2D" parent="."]
+position = Vector2(721, 656)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="platform4"]
+modulate = Color(0.133333, 0.176471, 0.235294, 1)
+position = Vector2(59, 0)
+scale = Vector2(0.764, 1)
+mesh = SubResource("QuadMesh_xsjx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4"]
 position = Vector2(59, 0)
 shape = SubResource("RectangleShape2D_moybb")
