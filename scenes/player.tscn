@@ -1,23 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca23sogv3emw8"]
+[gd_scene load_steps=10 format=3 uid="uid://ca23sogv3emw8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q7117"]
 [ext_resource type="Texture2D" uid="uid://wtfo75osk0gt" path="res://imports/sprites/scarlytt_chibi.png" id="2_ofy7g"]
+[ext_resource type="Texture2D" uid="uid://x70la8mypobw" path="res://imports/sprites/scarlytt_sprite_sheet.png" id="3_rlh23"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnp31"]
-radius = 45.0
-height = 174.0
+radius = 20.0
+height = 124.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qgiy"]
+atlas = ExtResource("3_rlh23")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfbdl"]
+atlas = ExtResource("3_rlh23")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfqob"]
+atlas = ExtResource("3_rlh23")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wga1a"]
+atlas = ExtResource("3_rlh23")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_noreh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qgiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfbdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfqob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qgiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wga1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfqob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfbdl")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 4.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_q7117")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.72853e-06, -87)
-scale = Vector2(0.494845, 0.503856)
+visible = false
+position = Vector2(2, -62)
+scale = Vector2(0.33677, 0.365039)
 texture = ExtResource("2_ofy7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -87)
+position = Vector2(0, -62)
 shape = SubResource("CapsuleShape2D_bnp31")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -171)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -82)
+scale = Vector2(2.3125, 2.50661)
+sprite_frames = SubResource("SpriteFrames_noreh")
+animation = &"walking"
+frame_progress = 0.734353
