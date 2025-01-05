@@ -48,7 +48,10 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = true
 
 	else:
-		_animated_sprite.play("idle")
+		if not is_on_floor():
+			_animated_sprite.play("jumping")
+		else:
+			_animated_sprite.play("idle")
 
 	move_and_slide()
 	
