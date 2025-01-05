@@ -126,4 +126,4 @@ position = Vector2(0, -82)
 scale = Vector2(2.3125, 2.50661)
 sprite_frames = SubResource("SpriteFrames_noreh")
 animation = &"jumping"
-frame_progress = 0.91647
+frame_progress = 0.54464

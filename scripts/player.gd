@@ -20,13 +20,12 @@ func _physics_process(delta):
 		# set max velocity
 		if velocity.y > 1000:
 			velocity.y = 1000
-		
 			
 	# Handle jump.
 	# && is_on_floor()
-	if Input.is_action_pressed("jump") && not is_on_floor():
-		_animated_sprite.is_playing("jumping")
+	if Input.is_action_pressed("jump") && is_on_floor():
 		velocity.y = -jump_velocity
+
 
 	# Get the input direction and handle the movement/deceleration.
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
@@ -36,11 +35,18 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	if Input.is_action_pressed("move_right"):
-		_animated_sprite.play("walking")
-		$AnimatedSprite2D.flip_h = true
-	elif Input.is_action_pressed("move_left"):
-		_animated_sprite.play("walking")
+		if not is_on_floor(): 
+			_animated_sprite.play("jumping")
+		else:
+			_animated_sprite.play("walking")
 		$AnimatedSprite2D.flip_h = false
+	elif Input.is_action_pressed("move_left"):
+		if not is_on_floor():
+			_animated_sprite.play("jumping")
+		else: 
+			_animated_sprite.play("walking")
+		$AnimatedSprite2D.flip_h = true
+
 	else:
 		_animated_sprite.play("idle")
 
